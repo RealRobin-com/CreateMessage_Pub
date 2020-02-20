@@ -6,6 +6,7 @@ exports.handler = async (event, context, callback) => {
   const sqs = new AWS.SQS({ apiVersion: '2012-11-05' });
 
   const params = {
+    DelaySeconds: 0,
     MessageBody: JSON.stringify(event),
     QueueUrl: "https://sqs.us-east-1.amazonaws.com/806302365898/CreateMessage"
   };
